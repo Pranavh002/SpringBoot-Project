@@ -1,12 +1,10 @@
 import React from "react";
 import { Container, Card, ListGroup, Row, Col } from "react-bootstrap";
 import { useTheme } from "../ThemeContext";
-import FriendsList from "./FriendsList";
-import FavoriteTeams from "./FavouriteTeams";
 
-// Cricket Icons
-const batIcon = "https://cdn.vectorstock.com/i/preview-1x/89/44/cricket-bat-icon-vector-33788944.jpg";
-const ballIcon = "https://cdn.vectorstock.com/i/500p/83/18/cricket-ball-vector-1468318.jpg";
+// Cricket Icons (Custom SVGs)
+const batIcon = "https://cdn.vectorstock.com/i/preview-1x/89/44/cricket-bat-icon-vector-33788944.jpg"; // Bat Icon
+const ballIcon = "https://cdn.vectorstock.com/i/500p/83/18/cricket-ball-vector-1468318.jpg"; // Ball Icon
 
 const matches = [
   { type: "live", team1: "India", team1Flag: "in", team2: "England", team2Flag: "gb", score: "112/2", overs: "15.3", toss: "India chose to bat" },
@@ -21,12 +19,7 @@ const MatchScoreCard = () => {
 
   return (
     <Container fluid className={`d-flex justify-content-center align-items-start mt-4 ${isDarkMode ? "bg-dark text-white" : "bg-light text-dark"}`} style={{ minHeight: "90vh" }}>
-      
-      {/* Friends List Component */}
-      <FriendsList />
-
-      {/* Main Match Score Card */}
-      <Card className={`w-50 p-3 shadow-lg rounded-3 border-0 ${isDarkMode ? "bg-dark text-white" : "bg-light text-dark"}`}>
+      <Card className={`w-100 p-3 shadow-lg rounded-3 border-0 ${isDarkMode ? "bg-dark text-white" : "bg-light text-dark"}`} style={{ maxWidth: "100%" }}>
         <div style={{ maxHeight: "400px", overflowY: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}>
           <ListGroup variant="flush">
             {matches.map((match, index) => (
@@ -58,11 +51,9 @@ const MatchScoreCard = () => {
           </ListGroup>
         </div>
       </Card>
-
-      {/* Favorite Teams Component */}
-      <FavoriteTeams />
     </Container>
   );
 };
 
 export default MatchScoreCard;
+  

@@ -6,7 +6,7 @@ const FriendsList = () => {
   const { isDarkMode } = useTheme();
 
   return (
-    <Card className={`me-4 p-3 shadow-sm rounded-3 border-0 ${isDarkMode ? "bg-secondary text-white" : "bg-light text-dark"}`} style={{ width: "20%" }}>
+    <Card className={`shadow-sm rounded-3 border-0 ${isDarkMode ? "bg-secondary text-white" : "bg-light text-dark"}`}>
       <Card.Body>
         <Card.Title>Friends List</Card.Title>
         <ListGroup variant="flush">

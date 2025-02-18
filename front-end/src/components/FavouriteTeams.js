@@ -2,13 +2,13 @@ import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
 import { useTheme } from "../ThemeContext";
 
-const FavoriteTeams = () => {
+const FavouriteTeams = () => {
   const { isDarkMode } = useTheme();
 
   return (
-    <Card className={`ms-4 p-3 shadow-sm rounded-3 border-0 ${isDarkMode ? "bg-secondary text-white" : "bg-light text-dark"}`} style={{ width: "20%" }}>
+    <Card className={`shadow-sm rounded-3 border-0 ${isDarkMode ? "bg-secondary text-white" : "bg-light text-dark"}`}>
       <Card.Body>
-        <Card.Title>Favorite Teams</Card.Title>
+        <Card.Title>Favourite Teams</Card.Title>
         <ListGroup variant="flush">
           {["India", "Australia", "England", "South Africa"].map((team, index) => (
             <ListGroup.Item key={index} className={isDarkMode ? "bg-dark text-white" : "bg-light text-dark"}>
@@ -21,4 +21,4 @@ const FavoriteTeams = () => {
   );
 };
 
-export default FavoriteTeams;
+export default FavouriteTeams;
